@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EchoWear - Wear the Future. Live the Change.</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#2ecc71", secondary: "#27ae60" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .hero-bg {
+      background: linear-gradient(135deg, rgba(87, 181, 231, 0.1) 0%, rgba(141, 211, 199, 0.1) 100%);
+      }
+      .scroll-indicator {
+      animation: bounce 2s infinite;
+      }
+      @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+      }
+      .counter-animation {
+      animation: countUp 3s ease-out;
+      }
+      @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+      }
+      .product-card:hover .product-overlay {
+      opacity: 1;
+      transform: translateY(0);
+      }
+      .product-overlay {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      }
+      .nav-blur {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a
+              href="#home"
+              class="text-2xl font-['Pacifico'] text-primary hover:text-primary/80 transition-colors"
+              >EchoWear</a
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#products"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Products</a
+            >
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#impact"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Impact</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search products..."
+                class="pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <div
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center"
+              >
+                <i class="ri-search-line text-gray-400 text-sm"></i>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i
+                  class="ri-shopping-cart-line text-gray-700 hover:text-primary cursor-pointer"
+                ></i>
+              </div>
+              <span
+                class="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >3</span
+              >
+            </div>
+            <div class="w-8 h-8 flex items-center justify-center">
+              <i
+                class="ri-user-line text-gray-700 hover:text-primary cursor-pointer"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center hero-bg"
+      style="background-image: url('https://readdy.ai/api/search-image?query=modern%20sustainable%20tech%20clothing%20fashion%20model%20wearing%20smart%20fitness%20tracker%20shirt%20in%20minimalist%20studio%20environment%20with%20soft%20natural%20lighting%20clean%20white%20background%20futuristic%20wearable%20technology%20seamless%20integration&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent"
+      ></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="max-w-2xl">
+          <h1 class="text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Wear the Future.<br />
+            <span class="text-primary">Live the Change.</span>
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+            Experience the perfect fusion of sustainable fashion and
+            cutting-edge technology. Our smart clothing tracks your health while
+            protecting the planet.
+          </p>
+          <div class="flex space-x-4">
+            <button
+              class="bg-primary text-white px-8 py-4 !rounded-button text-lg font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
+            >
+              Shop Collection
+            </button>
+            <button
+              class="border-2 border-gray-900 text-gray-900 px-8 py-4 !rounded-button text-lg font-semibold hover:bg-gray-900 hover:text-white transition-colors whitespace-nowrap"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div class="scroll-indicator w-6 h-6 flex items-center justify-center">
+          <i class="ri-arrow-down-line text-gray-600"></i>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Featured Products
+          </h2>
+          <p class="text-xl text-gray-600">
+            Discover our latest smart clothing innovations
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow relative"
+          >
+            <div class="aspect-w-4 aspect-h-5 bg-gray-100">
+              <img
+                src="https://readdy.ai/api/search-image?query=premium%20smart%20fitness%20tracking%20t-shirt%20with%20embedded%20sensors%20modern%20athletic%20wear%20sustainable%20organic%20cotton%20fabric%20clean%20product%20photography%20white%20background%20minimalist%20design&width=400&height=500&seq=product1&orientation=portrait"
+                alt="Smart Fitness Tee"
+                class="w-full h-80 object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Smart Fitness Tee
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Built-in heart rate monitor and posture tracking
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$89</span>
+                <button
+                  class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Quick Buy
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-overlay absolute inset-0 bg-black/80 text-white p-6 flex flex-col justify-center"
+            >
+              <h4 class="text-lg font-semibold mb-4">Tech Features</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Heart rate monitoring
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Posture correction alerts
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Organic cotton blend
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Machine washable
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow relative"
+          >
+            <div class="aspect-w-4 aspect-h-5 bg-gray-100">
+              <img
+                src="https://readdy.ai/api/search-image?query=eco-friendly%20smart%20hoodie%20with%20temperature%20regulation%20technology%20sustainable%20recycled%20materials%20modern%20streetwear%20design%20clean%20product%20photography%20white%20background&width=400&height=500&seq=product2&orientation=portrait"
+                alt="Eco Smart Hoodie"
+                class="w-full h-80 object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Eco Smart Hoodie
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Temperature regulation and activity tracking
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$129</span>
+                <button
+                  class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Quick Buy
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-overlay absolute inset-0 bg-black/80 text-white p-6 flex flex-col justify-center"
+            >
+              <h4 class="text-lg font-semibold mb-4">Tech Features</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Auto temperature control
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Step counter integration
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>100% recycled materials
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Wireless charging pocket
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow relative"
+          >
+            <div class="aspect-w-4 aspect-h-5 bg-gray-100">
+              <img
+                src="https://readdy.ai/api/search-image?query=premium%20smart%20athletic%20leggings%20with%20muscle%20activity%20sensors%20sustainable%20bamboo%20fiber%20fabric%20modern%20activewear%20design%20clean%20product%20photography%20white%20background&width=400&height=500&seq=product3&orientation=portrait"
+                alt="Active Smart Leggings"
+                class="w-full h-80 object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Active Smart Leggings
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Muscle activity sensors and recovery tracking
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$99</span>
+                <button
+                  class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Quick Buy
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-overlay absolute inset-0 bg-black/80 text-white p-6 flex flex-col justify-center"
+            >
+              <h4 class="text-lg font-semibold mb-4">Tech Features</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Muscle fatigue detection
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Recovery time analysis
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Bamboo fiber blend
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line mr-2"></i>Moisture-wicking tech
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="impact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">
+              Our Environmental Impact
+            </h2>
+            <p class="text-xl text-gray-600 mb-8">
+              Every EchoWear product contributes to a more sustainable future.
+              See the real-time impact of our community.
+            </p>
+            <div class="space-y-8">
+              <div class="counter-animation">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4"
+                  >
+                    <i class="ri-leaf-line text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <div
+                      class="text-3xl font-bold text-gray-900"
+                      id="co2Counter"
+                    >
+                      1,247
+                    </div>
+                    <div class="text-gray-600">Tons of CO₂ Saved</div>
+                  </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                  <div
+                    class="bg-primary h-3 rounded-full"
+                    style="width: 78%"
+                  ></div>
+                </div>
+              </div>
+              <div class="counter-animation">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4"
+                  >
+                    <i class="ri-recycle-line text-secondary text-xl"></i>
+                  </div>
+                  <div>
+                    <div
+                      class="text-3xl font-bold text-gray-900"
+                      id="recycleCounter"
+                    >
+                      89,432
+                    </div>
+                    <div class="text-gray-600">Plastic Bottles Recycled</div>
+                  </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                  <div
+                    class="bg-secondary h-3 rounded-full"
+                    style="width: 65%"
+                  ></div>
+                </div>
+              </div>
+              <div class="counter-animation">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4"
+                  >
+                    <i class="ri-drop-line text-orange-500 text-xl"></i>
+                  </div>
+                  <div>
+                    <div
+                      class="text-3xl font-bold text-gray-900"
+                      id="waterCounter"
+                    >
+                      2.8M
+                    </div>
+                    <div class="text-gray-600">Liters of Water Saved</div>
+                  </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                  <div
+                    class="bg-orange-500 h-3 rounded-full"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="mt-8 border-2 border-primary text-primary px-8 py-3 !rounded-button font-semibold hover:bg-primary hover:text-white transition-colors whitespace-nowrap"
+            >
+              View Detailed Impact Report
+            </button>
+          </div>
+          <div class="relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=sustainable%20fashion%20environmental%20impact%20visualization%20earth%20globe%20with%20green%20technology%20elements%20recycling%20symbols%20clean%20energy%20renewable%20materials%20modern%20infographic%20style&width=600&height=600&seq=impact1&orientation=squarish"
+              alt="Environmental Impact"
+              class="w-full rounded-2xl shadow-lg object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="products" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Complete Collection
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">
+            Explore our full range of smart, sustainable clothing
+          </p>
+          <div class="flex justify-center space-x-4 mb-8" id="filter-buttons">
+            <button
+              data-category="all"
+              class="px-6 py-2 bg-primary text-white !rounded-button font-medium whitespace-nowrap"
+            >
+              All Products
+            </button>
+            <button
+              data-category="tops"
+              class="px-6 py-2 bg-white text-gray-700 !rounded-button font-medium border hover:bg-gray-50 whitespace-nowrap"
+            >
+              Tops
+            </button>
+            <button
+              data-category="bottoms"
+              class="px-6 py-2 bg-white text-gray-700 !rounded-button font-medium border hover:bg-gray-50 whitespace-nowrap"
+            >
+              Bottoms
+            </button>
+            <button
+              data-category="outerwear"
+              class="px-6 py-2 bg-white text-gray-700 !rounded-button font-medium border hover:bg-gray-50 whitespace-nowrap"
+            >
+              Outerwear
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          id="products-grid"
+        >
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            data-category="tops"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=smart%20casual%20button-up%20shirt%20with%20embedded%20health%20sensors%20sustainable%20organic%20cotton%20modern%20business%20casual%20wear%20clean%20product%20photography%20white%20background&width=400&height=300&seq=prod1&orientation=landscape"
+              alt="Smart Casual Shirt"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Smart Casual Shirt
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Professional wear with health monitoring
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$119</span>
+                <button
+                  class="bg-gray-900 text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            data-category="bottoms"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=eco-friendly%20smart%20running%20shorts%20with%20moisture%20sensors%20recycled%20polyester%20fabric%20athletic%20performance%20wear%20clean%20product%20photography%20white%20background&width=400&height=300&seq=prod2&orientation=landscape"
+              alt="Performance Shorts"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Performance Shorts
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Moisture tracking and cooling technology
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$69</span>
+                <button
+                  class="bg-gray-900 text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            data-category="outerwear"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=sustainable%20smart%20winter%20jacket%20with%20temperature%20control%20technology%20recycled%20insulation%20modern%20outdoor%20wear%20clean%20product%20photography%20white%20background&width=400&height=300&seq=prod3&orientation=landscape"
+              alt="Climate Control Jacket"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Climate Control Jacket
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Adaptive temperature regulation system
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$199</span>
+                <button
+                  class="bg-gray-900 text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            data-category="bottoms"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=smart%20yoga%20pants%20with%20flexibility%20sensors%20bamboo%20fiber%20fabric%20sustainable%20activewear%20modern%20fitness%20clothing%20clean%20product%20photography%20white%20background&width=400&height=300&seq=prod4&orientation=landscape"
+              alt="Flex Yoga Pants"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Flex Yoga Pants
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Flexibility tracking and alignment feedback
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$89</span>
+                <button
+                  class="bg-gray-900 text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            data-category="tops"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=smart%20sleep%20shirt%20with%20sleep%20quality%20sensors%20organic%20cotton%20comfortable%20sleepwear%20modern%20pajama%20design%20clean%20product%20photography%20white%20background&width=400&height=300&seq=prod5&orientation=landscape"
+              alt="Sleep Tracker Shirt"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Sleep Tracker Shirt
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Sleep quality monitoring and comfort
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$79</span>
+                <button
+                  class="bg-gray-900 text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=eco-friendly%20smart%20socks%20with%20pressure%20sensors%20recycled%20materials%20athletic%20performance%20socks%20modern%20design%20clean%20product%20photography%20white%20background&width=400&height=300&seq=prod6&orientation=landscape"
+              alt="Smart Compression Socks"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Smart Compression Socks
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Circulation monitoring and support
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-gray-900">$39</span>
+                <button
+                  class="bg-gray-900 text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="about"
+      class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">
+              About EchoWear
+            </h2>
+            <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+              We believe the future of fashion lies in the perfect harmony
+              between technology, sustainability, and style. EchoWear was born
+              from a vision to create clothing that not only looks good but
+              actively contributes to your health and the planet's wellbeing.
+            </p>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Our innovative smart fabrics integrate seamlessly with
+              cutting-edge sensors to monitor your vital signs, track your
+              fitness goals, and provide real-time health insights. Every piece
+              is crafted from sustainable materials, ensuring that your fashion
+              choices echo positively for generations to come.
+            </p>
+            <div class="grid grid-cols-2 gap-8 mb-8">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">50K+</div>
+                <div class="text-gray-600">Happy Customers</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-secondary mb-2">95%</div>
+                <div class="text-gray-600">Sustainable Materials</div>
+              </div>
+            </div>
+            <a
+              href="https://readdy.ai/home/4369d4b0-cf9a-405d-8bff-c038d89a3b89/8ca08e39-4e14-4b4d-9eec-427fb21c51bd"
+              data-readdy="true"
+            >
+              <button
+                class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Learn Our Story
+              </button>
+            </a>
+          </div>
+          <div class="relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=sustainable%20fashion%20design%20studio%20with%20eco-friendly%20materials%20recycled%20fabrics%20smart%20textile%20technology%20development%20modern%20workspace%20green%20innovation%20clean%20bright%20environment&width=600&height=500&seq=about1&orientation=landscape"
+              alt="EchoWear Studio"
+              class="w-full rounded-2xl shadow-lg object-cover object-top"
+            />
+            <div
+              class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-award-line text-green-600 text-xl"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">
+                    B-Corp Certified
+                  </div>
+                  <div class="text-sm text-gray-600">Sustainable Business</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Stay Connected</h2>
+          <p class="text-xl text-gray-600">
+            Join our community and be the first to know about new innovations
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8 md:p-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                Newsletter Signup
+              </h3>
+              <p class="text-gray-600 mb-8">
+                Get exclusive access to new products, sustainability tips, and
+                health insights delivered to your inbox.
+              </p>
+              <form class="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                  />
+                </div>
+                <div class="space-y-3">
+                  <p class="text-sm font-medium text-gray-700">
+                    Subscription Preferences:
+                  </p>
+                  <label class="flex items-center">
+                    <div class="relative">
+                      <input
+                        type="checkbox"
+                        class="sr-only"
+                        id="product-updates"
+                      />
+                      <div
+                        class="w-5 h-5 bg-white border-2 border-gray-300 rounded cursor-pointer flex items-center justify-center"
+                        onclick="toggleCheckbox('product-updates')"
+                      >
+                        <i
+                          class="ri-check-line text-white text-sm hidden"
+                          id="product-updates-check"
+                        ></i>
+                      </div>
+                    </div>
+                    <span class="ml-3 text-sm text-gray-600"
+                      >Product Updates</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <div class="relative">
+                      <input type="checkbox" class="sr-only" id="health-tips" />
+                      <div
+                        class="w-5 h-5 bg-white border-2 border-gray-300 rounded cursor-pointer flex items-center justify-center"
+                        onclick="toggleCheckbox('health-tips')"
+                      >
+                        <i
+                          class="ri-check-line text-white text-sm hidden"
+                          id="health-tips-check"
+                        ></i>
+                      </div>
+                    </div>
+                    <span class="ml-3 text-sm text-gray-600"
+                      >Health & Wellness Tips</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <div class="relative">
+                      <input
+                        type="checkbox"
+                        class="sr-only"
+                        id="sustainability"
+                      />
+                      <div
+                        class="w-5 h-5 bg-white border-2 border-gray-300 rounded cursor-pointer flex items-center justify-center"
+                        onclick="toggleCheckbox('sustainability')"
+                      >
+                        <i
+                          class="ri-check-line text-white text-sm hidden"
+                          id="sustainability-check"
+                        ></i>
+                      </div>
+                    </div>
+                    <span class="ml-3 text-sm text-gray-600"
+                      >Sustainability News</span
+                    >
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Subscribe Now
+                </button>
+              </form>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                Contact Information
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 mt-1"
+                  >
+                    <i class="ri-map-pin-line text-primary"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">Headquarters</div>
+                    <div class="text-gray-600">
+                      123 Innovation Drive<br />San Francisco, CA 94105
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 mt-1"
+                  >
+                    <i class="ri-phone-line text-secondary"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">Phone</div>
+                    <div class="text-gray-600">+1 (555) 123-4567</div>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 mt-1"
+                  >
+                    <i class="ri-mail-line text-orange-500"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">Email</div>
+                    <div class="text-gray-600">hello@echowear.com</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8">
+                <h4 class="font-medium text-gray-900 mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                  <div
+                    class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer"
+                  >
+                    <i class="ri-facebook-fill"></i>
+                  </div>
+                  <div
+                    class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer"
+                  >
+                    <i class="ri-twitter-fill"></i>
+                  </div>
+                  <div
+                    class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer"
+                  >
+                    <i class="ri-instagram-fill"></i>
+                  </div>
+                  <div
+                    class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer"
+                  >
+                    <i class="ri-linkedin-fill"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <a
+              href="#home"
+              class="text-2xl font-['Pacifico'] text-primary hover:text-primary/80 transition-colors mb-4 inline-block"
+              >EchoWear</a
+            >
+            <p class="text-gray-400 mb-6">
+              Sustainable smart clothing for a better tomorrow.
+            </p>
+            <div class="flex space-x-4">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i
+                  class="ri-facebook-fill text-gray-400 hover:text-white cursor-pointer"
+                ></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i
+                  class="ri-twitter-fill text-gray-400 hover:text-white cursor-pointer"
+                ></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i
+                  class="ri-instagram-fill text-gray-400 hover:text-white cursor-pointer"
+                ></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i
+                  class="ri-linkedin-fill text-gray-400 hover:text-white cursor-pointer"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Products</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Smart Tops</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Active Bottoms</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Outerwear</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Accessories</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Sustainability</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Technology</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Support</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Size Guide</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Returns</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm">
+              © 2025 EchoWear. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-6 mt-4 md:mt-0">
+              <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-shield-check-line text-green-400"></i>
+                </div>
+                <span class="text-sm text-gray-400">B-Corp Certified</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-leaf-line text-green-400"></i>
+                </div>
+                <span class="text-sm text-gray-400">Carbon Neutral</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="checkbox-functionality">
+      function toggleCheckbox(id) {
+        const checkbox = document.getElementById(id);
+        const checkIcon = document.getElementById(id + "-check");
+        const container = checkbox.nextElementSibling;
+        checkbox.checked = !checkbox.checked;
+        if (checkbox.checked) {
+          container.classList.add("bg-primary", "border-primary");
+          container.classList.remove("bg-white", "border-gray-300");
+          checkIcon.classList.remove("hidden");
+        } else {
+          container.classList.remove("bg-primary", "border-primary");
+          container.classList.add("bg-white", "border-gray-300");
+          checkIcon.classList.add("hidden");
+        }
+      }
+    </script>
+    <script id="counter-animation">
+      document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+          threshold: 0.5,
+          rootMargin: "0px 0px -100px 0px",
+        };
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounters();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        const impactSection = document.getElementById("impact");
+        if (impactSection) {
+          observer.observe(impactSection);
+        }
+        function animateCounters() {
+          animateCounter("co2Counter", 1247, 2000);
+          animateCounter("recycleCounter", 89432, 2500);
+          animateCounter("waterCounter", 2.8, 2000, "M");
+        }
+        function animateCounter(id, target, duration, suffix = "") {
+          const element = document.getElementById(id);
+          const start = 0;
+          const increment = target / (duration / 16);
+          let current = start;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            if (suffix === "M") {
+              element.textContent = current.toFixed(1) + suffix;
+            } else {
+              element.textContent = Math.floor(current).toLocaleString() + suffix;
+            }
+          }, 16);
+        }
+      });
+    </script>
+    <script id="smooth-scroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              const offsetTop = targetSection.offsetTop - 80;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <script id="product-filter">
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.getElementById("filter-buttons");
+        const productsGrid = document.getElementById("products-grid");
+        if (filterButtons && productsGrid) {
+          filterButtons.addEventListener("click", function (e) {
+            if (e.target.tagName === "BUTTON") {
+              const selectedCategory = e.target.getAttribute("data-category");
+              filterButtons.querySelectorAll("button").forEach((btn) => {
+                if (btn === e.target) {
+                  btn.classList.remove(
+                    "bg-white",
+                    "text-gray-700",
+                    "border",
+                    "hover:bg-gray-50",
+                  );
+                  btn.classList.add("bg-primary", "text-white");
+                } else {
+                  btn.classList.remove("bg-primary", "text-white");
+                  btn.classList.add(
+                    "bg-white",
+                    "text-gray-700",
+                    "border",
+                    "hover:bg-gray-50",
+                  );
+                }
+              });
+              productsGrid.querySelectorAll("[data-category]").forEach((product) => {
+                if (
+                  selectedCategory === "all" ||
+                  product.getAttribute("data-category") === selectedCategory
+                ) {
+                  product.style.display = "block";
+                } else {
+                  product.style.display = "none";
+                }
+              });
+            }
+          });
+        }
+      });
+    </script>
+    <script id="newsletter-form">
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const modal = document.createElement("div");
+          modal.className =
+            "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
+          modal.innerHTML = `
+      <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <i class="ri-check-line text-green-600 text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2">Thank You!</h3>
+      <p class="text-gray-600 mb-6">You've successfully subscribed to our newsletter. Welcome to the EchoWear community!</p>
+      <button onclick="this.parentElement.parentElement.remove()" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">
+      Close
+      </button>
+      </div>
+      `;
+          document.body.appendChild(modal);
+          form.reset();
+          const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+            const checkIcon = document.getElementById(checkbox.id + "-check");
+            const container = checkbox.nextElementSibling;
+            container.classList.remove("bg-primary", "border-primary");
+            container.classList.add("bg-white", "border-gray-300");
+            if (checkIcon) checkIcon.classList.add("hidden");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
